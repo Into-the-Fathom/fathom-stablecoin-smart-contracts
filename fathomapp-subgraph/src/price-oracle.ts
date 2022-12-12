@@ -32,10 +32,9 @@ export function priceUpdateHandler(event: LogSetPrice): void {
                 pos.safetyBuffer = collateralValue.ge(debtValue) ? collateralValue.minus(debtValue) : BigDecimal.fromString('0')
 
                 //Check if position is unsafe or not
-                if(pos.safetyBuffer.equals(BigDecimal.fromString('0')) &&
-                 pos.debtShare.gt(BigInt.fromI32(0))){
+                if(pos.safetyBuffer.equals(BigDecimal.fromString('0')) && pos.debtShare.gt(BigInt.fromI32(0)) && pos.positionStatus != "liquidated"){
                     pos.positionStatus = 'unsafe'
-                 }
+                }
 
 
                 pos.tvl = pos.lockedCollateral.toBigDecimal().times(pool.collateralPrice) 

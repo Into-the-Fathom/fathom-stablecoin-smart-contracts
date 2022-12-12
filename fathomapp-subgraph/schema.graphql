@@ -5,6 +5,12 @@ enum PositionStatus {
   liquidated
 }
 
+type User @entity {
+  id: String!
+  address: Bytes! 
+  activePositionsCount: BigInt!
+}
+
 type Pool @entity {
   id: String!
   poolName: String!
@@ -41,7 +47,7 @@ type Position @entity {
   lockedCollateral: BigInt!
   debtShare: BigInt!
   safetyBuffer: BigDecimal!
-  safetyBufferInPrecent: BigDecimal!
+  safetyBufferInPercent: BigDecimal!
   tvl: BigDecimal!
   positionStatus: PositionStatus!
   liquidationPrice: BigDecimal!

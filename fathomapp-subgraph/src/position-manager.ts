@@ -4,7 +4,7 @@ import {
 
 } from "../generated/PositionManager/PositionManager"
 import {CollateralPoolConfig} from "../generated/CollateralPoolConfig/CollateralPoolConfig"
-import { Position,Pool } from "../generated/schema"
+import { Position, Pool, User} from "../generated/schema"
 import { log } from '@graphprotocol/graph-ts'
 
 
@@ -29,12 +29,28 @@ export function newPositionHandler(event: LogNewPosition): void {
     position.collateralPoolName = poolId.toString()
     position.lockedCollateral = BigInt.fromString('0')
     position.debtShare = BigInt.fromString('0')
-    position.safetyBuffer= BigDecimal.fromString('1')
-    position.safetyBufferInPrecent= BigDecimal.fromString('0')
+    position.safetyBuffer = BigDecimal.fromString('1')
+    position.safetyBufferInPercent = BigDecimal.fromString('0')
     position.tvl = BigDecimal.fromString('0')
     position.positionStatus = 'active'
     position.liquidationPrice = Constants.DEFAULT_PRICE
+
     position.save()
+
+    //     load user account 
+
+    let user = User.load(event.params._usr.toHexString())
+
+    if(user == null){
+      user = new User(event.params._usr.toHexString())
+      user.address = event.params._usr
+      user.activePositionsCount = BigInt.fromString('1')
+    } else {
+      user.activePositionsCount = user.activePositionsCount.plus(BigInt.fromString('1'))
+    }
+    user.save()
+    // increment positions count 
+    // save 
 
     //Save newly opened position in pool
     let pool  = Pool.load(poolId.toHexString())

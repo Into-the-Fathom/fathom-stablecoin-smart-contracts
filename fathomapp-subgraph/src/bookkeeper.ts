@@ -1,6 +1,6 @@
 import { BigDecimal, BigInt, log } from "@graphprotocol/graph-ts"
 import {LogAdjustPosition, LogSetTotalDebtCeiling, stablecoinIssuedAmount} from "../generated/BookKeeper/BookKeeper"
-import {Pool, ProtocolStat,Position } from "../generated/schema"
+import {Pool, ProtocolStat, Position, User } from "../generated/schema"
 import { Constants } from "./Utils/Constants"
 
 export function adjustPositionHandler(
@@ -40,6 +40,13 @@ export function adjustPositionHandler(
         position.tvl = position.lockedCollateral.toBigDecimal().times(pool.collateralPrice)
         if(event.params._debtShare.equals(BigInt.fromI32(0))){
           position.positionStatus = 'closed'
+
+          // decrement user position count
+          let user = User.load(position.userAddress.toHexString())
+          if (user != null) {
+            user.activePositionsCount = user.activePositionsCount.minus(BigInt.fromString('1'))
+            user.save()
+          }
         }
 
         //Update the liquidation price
@@ -60,7 +67,7 @@ export function adjustPositionHandler(
                                           )
                                         )
 
-            position.safetyBufferInPrecent = collateralAvailableToWithdraw.div(position.lockedCollateral.toBigDecimal())
+            position.safetyBufferInPercent = collateralAvailableToWithdraw.div(position.lockedCollateral.toBigDecimal())
         }
 
         position.save()
