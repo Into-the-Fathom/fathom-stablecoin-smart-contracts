@@ -7,10 +7,10 @@ const { parseEther } = require("ethers/lib/utils");
 const FATHOM_PER_BLOCK = parseEther("100");
 
 // for ganache
-const devAddress = accounts[0];
+// const devAddress = accounts[0];
 
 // for testnet
-// const devAddress = "0x46b5Da5314658b2ebEe832bB63a92Ac6BaedE2C0";
+const devAddress = "0x46b5Da5314658b2ebEe832bB63a92Ac6BaedE2C0";
 
 const rawdata = fs.readFileSync('../../../../addresses.json');
 let stablecoinAddress = JSON.parse(rawdata);

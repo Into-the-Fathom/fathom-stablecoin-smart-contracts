@@ -34,7 +34,7 @@ module.exports = async function(deployer) {
 
   // const priceOracle = await PriceOracle.at(stablecoinAddress.priceOracle);
   // await collateralPoolConfig.setPriceFeed(COLLATERAL_POOL_ID_WXDC, "0x00CDb38D1989De7D3E32c15dFd2b5DAa9fe3B56d");
-  await collateralPoolConfig.setPriceFeed(COLLATERAL_POOL_ID_FTHM, stablecoinAddress.fathomOraclePriceFeedFTHM);
+  // await collateralPoolConfig.setPriceFeed(COLLATERAL_POOL_ID_FTHM, stablecoinAddress.fathomOraclePriceFeedFTHM);
   await collateralPoolConfig.setPriceFeed(COLLATERAL_POOL_ID_WXDC, stablecoinAddress.fathomOraclePriceFeedWXDC);
 
 //   await collateralPoolConfig.initCollateralPool(

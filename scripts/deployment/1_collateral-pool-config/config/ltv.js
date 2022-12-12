@@ -44,7 +44,7 @@ module.exports = async function(deployer) {
   // console.log("PriceWithSafetyMargin FTHM is " + PriceWithSafetyMarginFTHM1);
 
   await collateralPoolConfig.setLiquidationRatio(COLLATERAL_POOL_ID_WXDC, LIQUIDATIONRATIO);
-  await collateralPoolConfig.setLiquidationRatio(COLLATERAL_POOL_ID_FTHM, LIQUIDATIONRATIO);
+  // await collateralPoolConfig.setLiquidationRatio(COLLATERAL_POOL_ID_FTHM, LIQUIDATIONRATIO);
 
   // const LTV3 = await collateralPoolConfig.getLiquidationRatio(COLLATERAL_POOL_ID_WXDC);
   // console.log("Liquidation ratio WXDC AFTER LTV change is " + LTV3);

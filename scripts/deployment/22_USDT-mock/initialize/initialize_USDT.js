@@ -3,9 +3,9 @@ const rawdata = fs.readFileSync('../../../../addresses.json');
 let stablecoinAddress = JSON.parse(rawdata);
 
 // for testnet
-// const devAddress = "0x46b5Da5314658b2ebEe832bB63a92Ac6BaedE2C0";
+const devAddress = "0x46b5Da5314658b2ebEe832bB63a92Ac6BaedE2C0";
 // for ganache
-const devAddress = accounts[0]; //coralX way of indicating first address
+// const devAddress = accounts[0]; //coralX way of indicating first address
 
 
 const USDT = artifacts.require('./8.17/mocks/USDT.sol');
