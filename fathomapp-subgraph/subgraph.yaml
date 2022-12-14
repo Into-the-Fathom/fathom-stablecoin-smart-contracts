@@ -6,7 +6,7 @@ dataSources:
     name: CollateralPoolConfig
     network: mainnet
     source:
-      address: "0xCa77B1822213C46EeD8c266680789b9Ad9c60Aa6" 
+      address: "0xf004fF88E6272dAFf8d062124e30021CD9e5250F" 
       abi: CollateralPoolConfig
       startBlock: 42355335 
     mapping:
@@ -33,7 +33,7 @@ dataSources:
     name: BookKeeper
     network: mainnet
     source:
-      address: "0x973c3219cb60b9D4d28c3957c6aaC3378B4B3099" 
+      address: "0xB3F930EdD49425a9E2Ff2F42AdcAd3A64EbeEaFE" 
       abi: BookKeeper
       startBlock: 42355335
     mapping:
@@ -58,7 +58,7 @@ dataSources:
     name: PriceOracle
     network: mainnet
     source:
-      address: "0x86EC238f40cA770b9799BF567697458Ce462b460" 
+      address: "0xCCd8fcc33Ed3803FcCb84A1E651219E89d6baE48" 
       abi: PriceOracle
       startBlock: 42355335
     mapping:
@@ -78,7 +78,7 @@ dataSources:
     name: PositionManager
     network: mainnet
     source:
-      address: "0x2Ba9a69CFcA59A943BC427c7156875364D592a51" 
+      address: "0xfeFDf4Cb104BC272Ba0602f4588438551e7067F6" 
       abi: PositionManager
       startBlock: 42355335
     mapping:
@@ -101,7 +101,7 @@ dataSources:
     name: FixedSpreadLiquidationStrategy
     network: mainnet
     source:
-      address: "0xeC16cF9f97Ebfc7963aB06414FC00d57E056D40e" 
+      address: "0x8797FA2FB53ffA686006d39Cf2f8273a3Ebd1913" 
       abi: FixedSpreadLiquidationStrategy
       startBlock: 42355335
     mapping:
