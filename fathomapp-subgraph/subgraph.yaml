@@ -35,7 +35,7 @@ dataSources:
     source:
       address: "0xB3F930EdD49425a9E2Ff2F42AdcAd3A64EbeEaFE" 
       abi: BookKeeper
-      startBlock: 42355335
+      startBlock: 42055335
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.6

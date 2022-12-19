@@ -42,15 +42,15 @@ export function newPositionHandler(event: LogNewPosition): void {
     let user = User.load(event.params._usr.toHexString())
 
     if(user == null){
-      user = new User(event.params._usr.toHexString())
+      user = new User(event.params._usr.toHexString())  
       user.address = event.params._usr
       user.activePositionsCount = BigInt.fromString('1')
     } else {
+      // increment positions count 
       user.activePositionsCount = user.activePositionsCount.plus(BigInt.fromString('1'))
     }
-    user.save()
-    // increment positions count 
     // save 
+    user.save()
 
     //Save newly opened position in pool
     let pool  = Pool.load(poolId.toHexString())

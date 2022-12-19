@@ -38,7 +38,7 @@ export function adjustPositionHandler(
         position.lockedCollateral =  event.params._lockedCollateral.div(Constants.WAD)
         position.debtShare =  Constants.divByRAD(event.params._positionDebtValue)
         position.tvl = position.lockedCollateral.toBigDecimal().times(pool.collateralPrice)
-        if(event.params._debtShare.equals(BigInt.fromI32(0))){
+        if(position.debtShare.equals(BigInt.fromI32(0)) && position.positionStatus != 'closed'){
           position.positionStatus = 'closed'
 
           // decrement user position count
