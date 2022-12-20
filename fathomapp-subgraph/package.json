@@ -10,9 +10,9 @@
     "remove-local": "graph remove --node http://localhost:8020/ fathomapp-subgraph",
     "deploy-local": "graph deploy --node http://localhost:8020/ --ipfs http://localhost:5001 fathomapp-subgraph",
 
-    "create-cloud": "graph create --node http://graph.composer.live:8020 fathomapp-subgraph",
-    "remove-cloud": "graph remove --node http://graph.composer.live:8020 fathomapp-subgraph",
-    "deploy-cloud": "graph deploy --node http://graph.composer.live:8020 --ipfs http://graph.composer.live:5001 fathomapp-subgraph",
+    "create-cloud": "graph create --node http://graph.composer.live fathomapp-subgraph",
+    "remove-cloud": "graph remove --node http://graph.composer.live fathomapp-subgraph",
+    "deploy-cloud": "graph deploy --node http://graph.composer.live --ipfs http://graph.composer.live:5001 fathomapp-subgraph",
     "test": "graph test"
   },
   "dependencies": {

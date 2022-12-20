@@ -18,7 +18,7 @@ type Pool @entity {
   liquidationRatio: BigDecimal!
   stabilityFeeRate: BigInt!
   tokenAdapterAddress: Bytes!
-  lockedCollateral: BigInt!
+  lockedCollateral: BigDecimal!
   collateralPrice: BigDecimal!
   collateralLastPrice: BigDecimal!
   priceWithSafetyMargin: BigDecimal!
@@ -44,7 +44,7 @@ type Position @entity {
   collateralPool: Bytes!
   collateralPoolName: String!
   positionId: BigInt!
-  lockedCollateral: BigInt!
+  lockedCollateral: BigDecimal!
   debtShare: BigInt!
   safetyBuffer: BigDecimal!
   safetyBufferInPercent: BigDecimal!

@@ -22,7 +22,7 @@ export function handleLogInitCollateralPoolId(
     pool.liquidationRatio = Constants.divByRAYToDecimal(event.params._liquidtionRatio)
     pool.stabilityFeeRate = Constants.divByRAY(event.params._stabilityFeeRate)
     pool.tokenAdapterAddress = event.params._adapter
-    pool.lockedCollateral = BigInt.fromI32(0)
+    pool.lockedCollateral = Constants.DEFAULT_PRICE
     pool.collateralPrice = Constants.DEFAULT_PRICE
     pool.collateralLastPrice = Constants.DEFAULT_PRICE
     pool.priceWithSafetyMargin = Constants.DEFAULT_PRICE
