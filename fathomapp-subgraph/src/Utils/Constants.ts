@@ -4,8 +4,8 @@ export class Constants{
     public static FATHOM_STATS_KEY:string = 'fathom_stats'
     public static DEFAULT_PRICE:BigDecimal = BigDecimal.fromString('0')
 
-    public static ADDR_COLLATERAL_POOL_CONFIG:string = '0xf004fF88E6272dAFf8d062124e30021CD9e5250F'
-    public static ADDR_POSITION_MANAGER:string = '0xfeFDf4Cb104BC272Ba0602f4588438551e7067F6'
+    public static ADDR_COLLATERAL_POOL_CONFIG:string = '0x7F7dd184B23b6C50a2476aC92669Cd2dF7d43e60'
+    public static ADDR_POSITION_MANAGER:string = '0xe11c4332F2ef49bCCEc08AB06f65fdf7f50BeC4B'
 
     public static WAD:BigInt = BigInt.fromI64(10**18)
     public static RAY:BigInt = BigInt.fromI64( 10**27)
